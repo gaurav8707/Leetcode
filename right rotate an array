@@ -1,0 +1,12 @@
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+
+        k = k%nums.size(); // for handling if the k value nums.size() ke value se zayda hai ya nai
+        
+         reverse(nums.begin() , nums.end()-k);
+         reverse(nums.begin()+(nums.size()-k) , nums.end());
+         reverse(nums.begin() , nums.end());
+        
+    }
+};
