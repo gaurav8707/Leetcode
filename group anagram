@@ -1,0 +1,30 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+
+        maps = {} # creating a hashmap 
+
+        for words in strs: #iterating in each word in the string array
+
+            count = [0]*26  #creating an empty array
+
+            for char in words: #for each word here we will iterate in each character
+
+                count[ord(char)-ord('a')]+=1 #countof each character in the empty array
+
+            key = tuple(count)  #converting the count list into tuple
+
+            if key not in maps: 
+                maps[key]= []
+            
+
+            maps[key].append(words)
+
+        return maps.values()
+
+                
+
+            
+
+        
+        
+        
